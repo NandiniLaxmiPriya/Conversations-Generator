@@ -3,20 +3,30 @@ from dotenv import load_dotenv
 from google import genai
 from google.genai import types
 import base64
-import fitz  # PyMuPDF
-# Load variables from .env file
+import fitz
+from langdetect import detect
 load_dotenv()
 prompt = """ You are an efficient and precise text-based PDF extractor.
-You will receive the content of a text-based PDF, which may contain English text. \n
+You will receive the content of PDF, which may contain English text. \n
 Your task is to extract the complete textual content exactly as it appears in the PDF, preserving the original language of each segment.\n
-Analyse image if there is image in the PDF and give key features of it. \n
+Do not extract text from images, tables and figures.\n
 Strictly ignore page numbers, headers, footers, borders, bullets and any other elements that are not the main textual content of the document.\n
 Maintain the original order of the text as it appears across all pages of the PDF. Do not rephrase or interpret the content; output the text verbatim. Pay attention to the sequence of paragraphs and sentences within each page.\n
 Preserve the original line breaks within paragraphs and sentences as much as possible, unless they are clearly artifacts of page layout rather than sentence breaks. Maintain the original spacing between words.\n
 The output should be a single, continuous string of text representing the content of the entire PDF, maintaining the original order of pages and the flow of text within each page.\n
 Do not summarize, paraphrase, translate, or add any commentary to the extracted text. Your sole purpose is to provide the exact text as it exists in the PDF.\n"""
 
+prompt2 ="""You are efficient and precise translator\n
+Your receive English text in string. \n
+Your task is to translate the text into Telugu.\n
+Maintain the original order of the text as it appears.\n
+Do not summarize or add any commentary to the translated text"""
 
+def detect_language(text):
+    try:
+        return detect(text)
+    except:
+        return "unknown"
 def analyze_pdf(doc, total_pages, min_image_area=10000):
     page_summaries = []
     text_only_pages = 0
@@ -130,12 +140,23 @@ def extract_text(filepath,output_filename):
 
     with open(output_filename, "w", encoding="utf-8") as outfile:
         outfile.write(response.text)
-
+    
+    print(detect_language(response.text))
+    detected_lang = detect_language(response.text)
+    if(detected_lang=="en"):
+        print("Language detected is english")
+        response_translate = client.models.generate_content(
+          model="gemini-1.5-flash",
+          contents=[response.text,prompt2])
+        with open("translate_output", "w", encoding="utf-8") as outfile:
+            outfile.write(response_translate.text)
+    else:
+        print("Language detected is telugu")
 def pdfinputType():
     pdfType = input("Enter 1.Telugu Text PDF 2.English Text PDF") 
     if pdfType=="1":
         print("1. Telugu")
-        input_file = "Photosynth.pdf"
+        input_file = r"C:\LLMS_PROJECT\Input\puretel.pdf"
         output_file = "Telugu_extracted_text_GEMINI.txt"
         if not os.path.exists(input_file):
             print(f"PDF file '{input_file}' not found.")
@@ -143,12 +164,13 @@ def pdfinputType():
             checkPdfFormat(input_file, output_file)
     else:
         print("2. english")
-        input_file = "Photosynth.pdf"
+        input_file = r"C:\LLMS_PROJECT\Input\Photosynth.pdf"
         output_file = "English_extracted_text_GEMINI.txt"
         if not os.path.exists(input_file):
             print(f"PDF file '{input_file}' not found.")
         else:
             checkPdfFormat(input_file, output_file)
+
 if __name__ == "__main__":
     # filepath_str = "Telugu.pdf"
     # filepath = fitz.open(filepath_str)

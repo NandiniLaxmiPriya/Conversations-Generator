@@ -1,27 +1,6 @@
-Photosynthesis is the physicochemical process by which green plants, algae, and some
-bacteria synthesise organic compounds in the presence of sunlight using components such
-as carbon dioxide and water. In this process, light energy is converted to chemical energy in
-the form of sugars and Oxygen as a byproduct.
-
-Thylakoid
-Lumen Thylakoid space Low pH
-Thylakoid membrane
-Chloroplast envelope
-Outer membrane
-Intermembrane space
-Inner membrane
-Granum-
-Lamella
-Stroma High pH
-DNA ring
-Ribosome
-Lipid globule
-Starch granule
-High pH
-H+
-HO
-H+
-Thylakoid
-stroma
-
-The image is a diagram of a chloroplast showing the different parts of the chloroplast and the process of photosynthesis.  Key features include labels for the thylakoid, stroma, granum, lamella, and other components.  Arrows show the movement of H+ ions.  The diagram also includes labels indicating pH levels in different parts of the chloroplast.
+సూర్యకాంతి నుండి వచ్చే శక్తి ఫోటోలిసిస్ అనే ప్రక్రియ ద్వారా నీటి అణువులను
+హైడ్రోజన్ మరియు ఆక్సిజన్గా విభజించడానికి ఉపయోగించబడుతుంది.
+నీటి నుండి హైడ్రోజన్, కార్బన్ డయాక్సైడ్తో పాటు, కాల్విన్ చక్రం అని పిలువబడే
+రసాయన ప్రతిచర్యల శ్రేణిలో గ్లూకోజ్ను ఉత్పత్తి చేయడానికి ఉపయోగిస్తారు.
+కిరణజన్య సంయోగక్రియ ఒక ఉప ఉత్పత్తిగా ఆక్సిజన్ను ఉత్పత్తి చేస్తుంది, ఇది భూమిపై
+చాలా జీవుల మనుగడకు కీలకం.
