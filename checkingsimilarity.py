@@ -4,8 +4,8 @@ from sklearn.metrics.pairwise import cosine_similarity
 def calculate_semantic_similarity(text1, text2, model_name='sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2'):
     try:
         model = SentenceTransformer(model_name)
-        embeddings1 = model.encode(text1)
-        embeddings2 = model.encode(text2)
+        embeddings1 = model.encode(text1,convert_to_tensor=False)
+        embeddings2 = model.encode(text2,convert_to_tensor=False)
         similarity_score = cosine_similarity([embeddings1], [embeddings2])[0][0]
         return similarity_score
     except Exception as e:
@@ -29,21 +29,21 @@ if __name__ == "__main__":
     pdfType = input("Enter 1.Telugu Text PDF 2.English Text PDF") 
     if pdfType=="1":
         print("1. Telugu")
-        gemini_text_file = "English_extracted_text_GEMINI.txt"
-        tesseract_text_file="Output.txt"
+        input1_text_file = "English_extracted_text_GEMINI.txt"
+        input2_text_file="Output.txt"
     else:
         print("2. english")
-        gemini_text_file = 'English_extracted_text_GEMINI.txt'
-        tesseract_text_file = 'English_extracted_text_tesseract.txt'
+        input1_text_file = 'translate_output.txt'
+        input2_text_file = 'conversations_output.txt'
         
 
     # Read the extracted text from the files
-    tesseract_text = read_text_from_file(tesseract_text_file)
-    gemini_text = read_text_from_file(gemini_text_file)
+    input2_text = read_text_from_file(input2_text_file)
+    input1_text = read_text_from_file(input1_text_file)
 
-    if tesseract_text is not None and gemini_text is not None:
+    if input2_text is not None and input1_text is not None:
         # Calculate the semantic similarity using SBERT
-        similarity_score = calculate_semantic_similarity(tesseract_text, gemini_text)
+        similarity_score = calculate_semantic_similarity(input2_text, input1_text)
 
         if similarity_score is not None:
             print(f"Semantic Similarity between tesseract and Gemini extracted text (using paraphrase-multilingual-MiniLM-L12-v2): {similarity_score:.4f}")

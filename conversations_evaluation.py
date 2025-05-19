@@ -1,6 +1,7 @@
 import os
 from dotenv import load_dotenv
 from google import genai
+from google.genai import types
 from gtts import gTTS
 load_dotenv()
 client = genai.Client(api_key=os.getenv("MY_API_KEY"))
@@ -8,26 +9,46 @@ client = genai.Client(api_key=os.getenv("MY_API_KEY"))
 with open("translate_output.txt", "r", encoding="utf-8") as f:
     telugu_translated=f.read()
 conv_prompt = f"""
-Generate a realistic and engaging technical conversation in telugu among three speakers from the content in the following "{telugu_translated}".
+Generate a realistic and engaging technical conversation in Telugu among three speakers based on the content provided in "{telugu_translated}".
+
+Goals:
+- The conversation should fully explain the entire content without skipping any paragraph or sub-point.
+- The discussion should flow naturally, as a single continuous conversation — not as isolated exchanges for each paragraph.
+- All key points, paragraphs, and sub-topics must be covered progressively throughout the dialogue.
+
+Character Roles:
 - Speaker 1 is an expert in the topic.
-- Speaker 2 has a moderate understanding.
-- Speaker 3 is a beginner and unfamiliar with the topic.
-The conversation should flow naturally, with:
-- Speaker 3 asking genuine beginner questions.
-- Speaker 2 attempting to explain in layman's terms and occasionally deferring to Speaker 1.
-- Speaker 1 providing in-depth insights and clarifying misconceptions.
-Do not specify speaker 1,2 or 3, instead specify speaker name. 
-The goal is for Speaker 3 to progressively understand the topic by the end of the conversation.
-Keep the conversation structured, informative, and accessible. Include technical explanations, analogies.
-If examples are given in the content, then use them else add examples where necessary.
-Do not give any extra information in English, before and after conversations.
-Maintain a Natural Tone: The conversation should sound like a real discussion, not a lecture.
-Do not add **speaker name**, just keep speaker name
-"Output format: Provide the character names,description of characters, and then the conversation.
+- Speaker 2 has a moderate understanding and explains ideas in layman’s terms.
+- Speaker 3 is a beginner and asks simple, genuine questions to learn about the topic.
+
+Conversation Style:
+- Speaker 3 initiates or responds with beginner-level questions or confusion.
+- Speaker 2 gives simplified explanations and sometimes refers to Speaker 1 for clarity.
+- Speaker 1 provides deeper, accurate insights, corrects any misunderstandings, and explains technical points clearly.
+- Include relevant examples: use those present in the text; if not, add your own for better understanding.
+- Use analogies and real-world references where helpful.
+
+Instructions:
+- The conversation must be structured, informative, and engaging.
+- Ensure the flow of dialogue naturally introduces and explains the content in the order it appears.
+- Do not skip any topics or subpoints.
+- Do not present the text as a summary or narration — keep it as a natural back-and-forth discussion.
+- Do not include any English explanation before or after the conversation.
+- Do not prefix speakers with labels like **Speaker 1**, just use their character names.
+
+Output Format:
+1. Start with character names and a one-line description for each.
+2. Then write the conversation, ensuring full coverage of the content in a natural tone.
+
 """
 response_conversation = client.models.generate_content(
           model="gemini-1.5-flash",
-          contents=[conv_prompt])
+          contents=[conv_prompt],
+          config=types.GenerateContentConfig(
+        temperature=0.0,
+        top_p=1.0,
+        top_k=1
+    ))
 with open("conversations_output.txt", "w", encoding="utf-8") as outfile:
     outfile.write(response_conversation.text)
 
