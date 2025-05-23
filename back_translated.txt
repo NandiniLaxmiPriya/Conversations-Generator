@@ -1,66 +1,60 @@
-A decentralized system is a system where components residing on computers connected to a network coordinate their actions by exchanging messages only.
+A decentralized system is a system where components residing on computers connected to a network communicate only by sending messages, and coordinate their actions.
 
-A decentralized system can be defined as a system where hardware or software components residing on computers connected to a network coordinate their actions by exchanging messages only.
+A decentralized system is a system where hardware or software components residing on computers connected to a network communicate only by sending messages, and coordinate their actions.
 
-Computers connected via a network may be spatially separated by any distance.  They may be on different continents, in the same building, or even in the same room.
+Computers connected via the network can be at any distance. They may be on different continents, in the same building, or in the same room.
 
-Characteristics of decentralized systems: Component parallelism, absence of a global clock, and independent component failures.
+Characteristics of decentralized systems: parallel processing of components, absence of a global clock, and independent failures of components.
 
-Parallelism: In a network of computers, parallel program execution is commonplace.  I can do my work on my computer while you do yours on yours, sharing resources like web pages or files when necessary.  The system's capacity to manage shared resources can be increased by adding extra resources.
+Parallel processing: In a network of computers, parallel program execution is common.  I can do my work on my computer while you do yours on yours, sharing resources such as web pages or files if needed. The capacity of the system managing shared resources can be increased by adding more resources.
 
-No global clock - Computers in the network may synchronize their clocks - there is no single global notion of the correct time. This is a direct consequence of the fact that communication occurs only by sending messages through the network.
+No global clock - While computers in the network may synchronize their clocks - there is no single global notion of the correct time. This is a direct consequence of the fact that communication is solely by sending messages across the network.
 
-Independent failures: Each component of the system can fail independently, with the rest continuing to operate.
+Independent failures: Each component of the system can fail independently, with the rest continuing to function.
 
-Examples of decentralized systems:
-
+Examples of Decentralized Systems
 The Internet
-
-The modern Internet is a vast interconnected collection of diverse computer networks, the range of types constantly expanding and now incorporating a wide range of wireless communication technologies, such as WiFi, WiMAX, Bluetooth and third-generation mobile phone networks, for example. The resultant networking has become a pervasive resource, and devices can be connected (if needed) anytime and anywhere.
-
-• Shows a typical component of the Internet.
-• Programs running on computers connected to it interact by sending messages,
+The modern Internet is a vast interconnected collection of many different kinds of computer networks, the range of types constantly increasing and now including, for example, a wide range of wireless communication technologies such as WiFi, WiMAX, Bluetooth and third-generation mobile phone networks. The resulting networking has become a pervasive resource and devices can be connected anytime and anywhere (if needed).
+• Shows a typical part of the Internet.
+• Programs running on the computers connected to it interact by sending messages.
 • The Internet is also a very large decentralized system.
-• It allows users, wherever they are, to make use of services such as the World Wide Web, email, and file transfer.
+• It allows users, wherever they are, to use services such as the World Wide Web, email and file transfer.
 • The set of services is open-ended
-• It can be expanded by adding server computers and new types of service.
-• This figure shows a collection of Intranets - subnetworks maintained by companies and other organizations and typically protected by firewalls. The firewall's job is to protect the Intranet by preventing unauthorized messages from leaving or entering.
-• Internet Service Providers (ISPs) are companies that provide broadband links and other types of connection to individual users and small organizations, allowing access to services anywhere on the Internet as well as providing local services such as email and web hosting.
+• It can be extended by adding server computers and new types of services.
+• Shows a collection of intranets, which are sub-networks maintained by companies and other organizations, and usually protected by firewalls. The firewall works by preventing unauthorized messages from going out or coming in, thus protecting the intranet.
+• Internet Service Providers (ISPs) are companies that provide broadband links and other types of connections to individual users and small organizations, as well as providing local services such as email and web hosting, and allowing access to services anywhere on the Internet.
 • Intranets are interconnected by backbones.
 • A backbone is a network link with high transmission capacity, using satellite connections, fiber optic cables and other high-bandwidth circuits.
 
 Intranet
-
-A part of the Internet that is separately administered and has a boundary that can be configured to implement local security policies.
+A part of the internet that is separately administered and has a boundary that can be configured to enforce local security policies.
 
 Consists of a number of LANs interconnected by backbone connections.
 
-Connected to the Internet via a router.
+Connected to the internet via a router.
 
-Main problems in the design of components for use in an Intranet:
-
+Main Issues in the Design of Components for Use in an Intranet
 • File services
 • Firewall
 • Software installation and support costs
 
-Mobile and ubiquitous computing
-
-Miniaturization of devices and advances in wireless networking have led to the increasing integration of small and portable computing devices into decentralized systems.
+Mobile and Ubiquitous Computing
+Technological advances in device miniaturization and wireless networking have led to the large-scale integration of small and portable computing devices into decentralized systems.
 
 These devices include:
-
 • Laptop computers.
-• Handheld devices including mobile phones, smart phones, GPS-capable devices, pagers, personal digital assistants (PDAs), video cameras and digital cameras.
-• Wearable devices such as smart watches with functionality similar to a PDA.
-• Devices embedded in appliances such as washing machines, hi-fi systems, cars, and refrigerators.
-• Many of these devices, coupled with their portability and the ability to conveniently connect to networks in diverse locations, make mobile computing possible.
-• Mobile computing means performing computing tasks while the user is traveling or visiting locations other than their usual environment.
-• In mobile computing, users away from their ‘home’ Intranet (Intranet at work or at their residence) are still provided with access to resources through the devices they carry.
-• They can continue to access the Internet; they can continue to access resources on their home Intranet; and there is a growing provision for them to use resources such as conveniently located printers or points of sale as they move around. This is also referred to as location-aware or context-aware computing.
-• Mobility introduces several challenges to decentralized systems, the need to cope with variable connectivity and indeed disconnection, and the need to maintain operation in the context of device mobility.
-• Ubiquitous computing is the use of many small, inexpensive computational devices located within users’ physical environments, in home, office and natural settings.
-• The term ‘ubiquitous’ is intended to suggest that the small computing devices will eventually become so pervasive in everyday objects that they are unnoticed. That is, their computational behavior is transparently and seamlessly integrated with their physical function.
-• Computers being everywhere only becomes useful when they can communicate with one another. For instance, users might find it convenient to control their washing machine or their entertainment system from their phone or a ‘universal remote control’ device in their home. Similarly, the washing machine could inform the user via a smart badge or phone when the wash is done.
-• Ubiquitous and mobile computing overlap because a mobile user can in principle benefit from computers being everywhere. But they are generally distinct.
-• Ubiquitous computing benefits users while they are in a single environment, such as home or hospital. Similarly, mobile computing has benefits even if only traditional, separate computers and devices such as laptops and printers are present.
-• Shows a user visiting a host organization. This figure shows the user’s home Intranet and the host Intranet at the location the user is visiting. Both Intranets are connected to the rest of the Internet. The user has access to three forms of wireless connection. Their laptop has a means of connecting to the host’s wireless LAN. This network provides coverage of a few hundred meters (a floor of a building, say).  It connects to the rest of the host Intranet via a gateway or access point. The user also has a mobile (cellular) telephone, which is connected to the Internet. The phone provides access to the Web and other Internet services, limited only by what can be displayed on its small display and can also provide location information via a built-in GPS function. Finally, the user carries a digital camera that can communicate with a device such as a printer via a Personal Area Wireless Network (range up to about 10 meters).
+• Handheld devices, including mobile phones, smart phones, GPS-capable devices, pagers, personal digital assistants (PDAs), video cameras and digital cameras.
+• Wearable devices such as smart watches with functionality similar to PDAs.
+• Embedded devices in appliances such as washing machines, hi-fi systems, cars and refrigerators.
+• The portability of many of these devices, together with their ability to conveniently connect to networks in different locations, makes mobile computing possible.
+• Mobile computing is the execution of computing tasks while the user is traveling or visiting locations other than their usual environment.
+• In mobile computing, users away from their ‘home’ intranet (the intranet at work or in their residence) are provided with access to resources through the devices they carry with them.
+• They can continue to access the Internet; they can continue to access resources on their home intranet; and there is a growing provision for users to utilize resources such as printers or points of sale that are nearby as they move around. This is also called location-aware or context-aware computing.
+• Introduces many challenges to decentralized systems, such as the need to manage mobile devices and indeed to cope with disconnection.
+• Ubiquitous computing is the use of small, cheap computational devices in users' physical environments, including home, office and also natural settings.
+• The word ‘ubiquitous’ is intended to suggest that small computing devices will eventually become so pervasive in everyday objects that they are rarely noticed. That is, their computational behaviour is transparently and closely coupled to their physical function.
+• Computers being everywhere only becomes useful when they can communicate with each other. For example, it might be convenient for users to control their washing machine or their entertainment system from their phone or a ‘universal remote control’ device in the house. Similarly, the washing machine might inform the user via a smart badge or phone when the wash is complete.
+• Ubiquitous and mobile computing overlap because the mobile user can in principle benefit from computers being everywhere. But they are usually distinguished.
+• Ubiquitous computing can benefit users while they are in a single environment, such as a home or hospital. Similarly, mobile computing has benefits even if only traditional, detached computers and devices such as laptops and printers are involved.
+• Shows a user visiting a host organization. The picture shows the user’s home intranet and the host intranet at the location the user is visiting. Both intranets are connected to the rest of the Internet. The user has access to three forms of wireless connection. Their laptop has a means of connecting to the host’s wireless LAN. This network provides coverage of a few hundred meters (a building floor, say).
+• The host intranet connects to the rest via a gateway or access point. The user also has a mobile (cellular) phone, which is connected to the Internet. The phone gives access to web and other Internet services, only limited by what can be displayed on its small display, and can also provide location information via built-in GPS functionality. Finally, the user carries a digital camera, which can communicate via a personal area wireless network (range up to about 10 meters) with a device such as a printer.

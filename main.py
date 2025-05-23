@@ -5,7 +5,24 @@ from google.genai import types
 import base64
 import fitz
 from langdetect import detect
+from fastapi import FastAPI, File, UploadFile, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
+
 load_dotenv()
+client = genai.Client(api_key=os.getenv("MY_API_KEY"))
+app = FastAPI()
+
+# Allow frontend (Next.js) to communicate
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:3000"],  # adjust as needed
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+@app.get("/")
+def read_root():
+    return {"message": "FastAPI is running!"}
+
 prompt = """ You are an efficient and precise text-based PDF extractor.
 You will receive the PDF, which may contain English or Telugu text. \n
 Your task is to extract the complete textual content exactly as it appears in the PDF but You should not extract text from images, tables and figures. Preserving the original language of each segment.\n
@@ -95,40 +112,31 @@ def analyze_pdf(doc, total_pages, min_image_area=10000):
     }
 
 # Example usage
-def checkPdfFormat(filepath_str,output_filename):
-    filepath = fitz.open(filepath_str)
-    total_pages = len(filepath)
-    result = analyze_pdf(filepath,total_pages)
+def checkPdfFormat(pdf_bytes: bytes,output_filename: str):
+    pdf_doc = fitz.open(stream=pdf_bytes, filetype="pdf")
+    total_pages = len(pdf_doc)
+    result = analyze_pdf(pdf_doc, total_pages)
     # count=0
     print(f"Document Classification: {result['document_classification']}")
     print("Page Breakdown:")
     for page_num, classification in result["page_summaries"]:
         print(f"  Page {page_num}: {classification}")
-        # if(classification=="Text-only"):
-        #     count+=1
-    extract_text(
-            filepath_str, output_filename
+    final_result = extract_text(
+            pdf_bytes, output_filename
         )
-    # if(count==total_pages):
-    #     extract_text(
-    #         filepath_str, output_filename
-    #     )
-    # else:
-    #     print("PDF is not text only")
+    return final_result
 
 
-def extract_text(filepath,output_filename):
+def extract_text(pdf_bytes: bytes, output_filename: str):
 
-    client = genai.Client(api_key=os.getenv("MY_API_KEY"))
-
-    with open(filepath, "rb") as doc_file:
-        doc_data = base64.standard_b64encode(doc_file.read()).decode("utf-8")
+    # with open(filepath, "rb") as doc_file:
+    #     doc_data = base64.standard_b64encode(doc_file.read()).decode("utf-8")
 
     response = client.models.generate_content(
       model="gemini-1.5-flash",
       contents=[
           types.Part.from_bytes(
-            data=doc_data,
+            data=pdf_bytes,
             mime_type='application/pdf',
           ),
           prompt])
@@ -160,49 +168,89 @@ def extract_text(filepath,output_filename):
     else:
         print("Language detected is telugu")
         response_main=response.text
-#     conv_prompt = f"""
-# Generate a realistic and engaging technical conversation in telugu among three speakers from the content in the following "{response_main}".
-# - Speaker 1 is an expert in the topic.
-# - Speaker 2 has a moderate understanding.
-# - Speaker 3 is a beginner and unfamiliar with the topic.
-# The conversation should flow naturally, with:
-# - Speaker 3 asking genuine beginner questions.
-# - Speaker 2 attempting to explain in layman's terms and occasionally deferring to Speaker 1.
-# - Speaker 1 providing in-depth insights and clarifying misconceptions.
-# Do not specify speaker 1,2 or 3, instead specify speaker name. 
-# The goal is for Speaker 3 to progressively understand the topic by the end of the conversation.
-# Keep the conversation structured, informative, and accessible. Include technical explanations, analogies.
-# If examples are given in the content, then use them else add examples where necessary.
-# Do not give any extra information in English, before and after conversations.
-# """
-#     response_conversation = client.models.generate_content(
-#           model="gemini-1.5-flash",
-#           contents=[conv_prompt])
-#     with open("conversations_output.txt", "w", encoding="utf-8") as outfile:
-#             outfile.write(response_conversation.text)
+    result_convo = conversations_generator(response_main)
+    return result_convo
 
-def pdfinputType():
-    pdfType = input("Enter 1.Telugu Text PDF 2.English Text PDF") 
-    if pdfType=="1":
-        print("1. Telugu")
-        input_file = r"C:\LLMS_PROJECT\Input\puretel.pdf"
-        output_file = "Telugu_extracted_text_GEMINI.txt"
-        if not os.path.exists(input_file):
-            print(f"PDF file '{input_file}' not found.")
-        else:
-            checkPdfFormat(input_file, output_file)
-    else:
-        print("2. english")
-        input_file = r"C:\LLMS_PROJECT\DS_test.pdf"
-        output_file = "English_extracted_text_GEMINI.txt"
-        if not os.path.exists(input_file):
-            print(f"PDF file '{input_file}' not found.")
-        else:
-            checkPdfFormat(input_file, output_file)
+
+def conversations_generator(response_main):
+    conv_prompt = f"""
+Generate a realistic and engaging technical conversation in Telugu among three speakers based on the content provided in "{response_main}".
+
+Goals:
+- The conversation should fully explain the entire content without skipping any paragraph or sub-point.
+- The discussion should flow naturally, as a single continuous conversation — not as isolated exchanges for each paragraph.
+- All key points, paragraphs, and sub-topics must be covered progressively throughout the dialogue.
+
+Character Roles:
+- Speaker 1 is an expert in the topic.
+- Speaker 2 has a moderate understanding and explains ideas in layman’s terms.
+- Speaker 3 is a beginner and asks simple, genuine questions to learn about the topic.
+
+Conversation Style:
+- Speaker 3 initiates or responds with beginner-level questions or confusion.
+- Speaker 2 gives simplified explanations and sometimes refers to Speaker 1 for clarity.
+- Speaker 1 provides deeper, accurate insights, corrects any misunderstandings, and explains technical points clearly.
+- Include relevant examples: use those present in the text; if not, add your own for better understanding.
+- Use analogies and real-world references where helpful.
+
+Instructions:
+- The conversation must be structured, informative, and engaging.
+- Ensure the flow of dialogue naturally introduces and explains the content in the order it appears.
+- Do not skip any topics or subpoints.
+- Do not present the text as a summary or narration — keep it as a natural back-and-forth discussion.
+- Do not include any English explanation before or after the conversation.
+- Do not prefix speakers with labels like **Speaker 1**, just use their character names.
+
+Output Format:
+1. Start with character names and a one-line description for each.
+2. Then write the conversation, ensuring full coverage of the content in a natural tone.
+
+"""
+    response_conversation = client.models.generate_content(
+          model="gemini-1.5-flash",
+          contents=[conv_prompt],
+          config=types.GenerateContentConfig(
+        temperature=0.0,
+        top_p=1.0,
+        top_k=1
+    ))
+    with open("conversations_output.txt", "w", encoding="utf-8") as outfile:
+        outfile.write(response_conversation.text)
+    return {"conversation": response_conversation.text}
+
+
+@app.post("/upload")
+async def pdfinputType(file: UploadFile = File(...)):
+    # pdfType = input("Enter 1.Telugu Text PDF 2.English Text PDF") 
+    # if pdfType=="1":
+    #     print("1. Telugu")
+    #     input_file = r"C:\LLMS_PROJECT\Input\puretel.pdf"
+    #     output_file = "Telugu_extracted_text_GEMINI.txt"
+    #     if not os.path.exists(input_file):
+    #         print(f"PDF file '{input_file}' not found.")
+    #     else:
+    #         checkPdfFormat(input_file, output_file)
+    # else:
+    #     print("2. english")
+    #     input_file = "DS_test.pdf"
+    #     output_file = "English_extracted_text_GEMINI.txt"
+    #     if not os.path.exists(input_file):
+    #         print(f"PDF file '{input_file}' not found.")
+    #     else:
+    #         checkPdfFormat(input_file, output_file)
+    if file.content_type != "application/pdf":
+        raise HTTPException(status_code=400, detail="Only PDF files allowed")
+
+    # ✅ Read file contents in memory (no disk I/O)
+    file_bytes = await file.read()
+
+    # ✅ Call processing function
+    result= checkPdfFormat(file_bytes,output_filename="Gemini_extracted_text_output.txt")
+    return {"detail": f"{file.filename} uploaded and processed successfully", "data":result}
 
 if __name__ == "__main__":
     # filepath_str = "Telugu.pdf"
     # filepath = fitz.open(filepath_str)
     # total_pages = len(filepath)
     # checkPdfFormat(filepath,total_pages,filepath_str)
-    pdfinputType()
+    print("Started!")

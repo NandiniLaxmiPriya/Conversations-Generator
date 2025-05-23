@@ -52,7 +52,7 @@ response_conversation = client.models.generate_content(
 with open("conversations_output.txt", "w", encoding="utf-8") as outfile:
     outfile.write(response_conversation.text)
 
-file_path = r'C:\LLMS_PROJECT\conversations_output.txt'
+file_path = "conversations_output.txt"
 with open(file_path, "r", encoding="utf-8") as f:
     text=f.read()
 

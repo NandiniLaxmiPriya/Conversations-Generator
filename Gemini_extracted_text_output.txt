@@ -1,0 +1,107 @@
+A distributed system is one in which components located at networked computers
+communicate and coordinate their actions only by passing messages.
+a distributed system as one in which hardware or software components located at networked
+computers communicate and coordinate their actions only by passing messages.
+Computers that are connected by a network may be spatially separated by any distance. They
+may be on separate continents, in the same building or in the same room.
+characteristics of distributed systems: concurrency of components, lack of a global clock
+and independent failures of components
+Concurrency: In a network of computers, concurrent program execution is the norm. I can do
+my work on my computer while you do your work on yours, sharing resources such as web
+pages or files when necessary. The capacity of the system to handle shared resources can be
+increased by adding more resources
+No global clock - computers in a network can synchronize their clocks – there is no single
+global notion of the correct time. This is a direct consequence of the fact that the only
+communication is by sending messages through a network
+Independent failures: Each component of the system can fail independently, leaving the others
+still running
+Examples of distributed systems
+Internet
+The modern Internet is a vast interconnected collection of computer networks of many different
+types, with the range of types increasing all the time and now including, for example, a wide
+range of wireless communication technologies such as WiFi, WiMAX, Bluetooth and third-
+generation mobile phone networks. The net result is that networking has become a pervasive
+resource and devices can be connected (if desired) at any time and in any place.
+•	illustrates a typical portion of the Internet.
+•	Programs running on the computers connected to it interact by passing messages,
+•	The Internet is also a very large distributed system.
+•	It enables users, wherever they are, to make use of services such as the World Wide
+Web, email and file transfer.
+•	The set of services is open-ended
+•	it can be extended by the addition of server
+computers and new types of service.
+•	The figure shows a collection of intranets – subnetworks operated by companies and
+other organizations and typically protected by firewalls. The role of a firewall is to
+protect an intranet by preventing unauthorized messages from leaving or entering.
+•	Internet Service Providers (ISPs) are companies that provide broadband links and other
+types of connection to individual users and small organizations, enabling them to access
+services anywhere in the Internet as well as providing local services such as email and
+web hosting.
+•	The intranets are linked together by backbones.
+•	A backbone is a network link with a high transmission capacity, employing satellite
+connections, fibre optic cables and other high-bandwidth circuits.
+Intranet
+A portion of the Internet that is separately administered and has a boundary that can be
+configured to enforce local security policies
+Composed of several LANs linked by backbone connections
+Be connected to the Internet via a router.
+Main issues in the design of components for the use in intranet
+•	File services
+•	Firewall
+•	The cost of software installation and support
+Mobile and ubiquitous computing
+Technological advances in device miniaturization and wireless networking have led
+increasingly to the integration of small and portable computing devices into distributed
+systems.
+These devices include:
+•	Laptop computers.
+•	Handheld devices, including mobile phones, smart phones, GPS-enabled devices, pagers,
+personal digital assistants (PDAs), video cameras and digital cameras.
+•	Wearable devices, such as smart watches with functionality similar to a PDA.
+•	Devices embedded in appliances such as washing machines, hi-fi systems, cars and
+refrigerators.
+•	The portability of many of these devices, together with their ability to connect
+conveniently to networks in different places, makes mobile computing possible.
+•	Mobile computing is the performance of computing tasks while the user is on the move,
+or visiting places other than their usual environment.
+•	In mobile computing, users who are away from their 'home' intranet (the intranet at
+work, or their residence) are still provided with access to resources via the devices they
+carry with them.
+•	They can continue to access the Internet; they can continue to access resources in their
+home intranet; and there is increasing provision for users to utilize resources such as
+printers or even sales points that are conveniently nearby as they move around. The
+latter is also known as location-aware or context-aware computing.
+•	Mobility introduces a number of challenges for distributed systems, including the need
+to deal with variable connectivity and indeed disconnection, and the need to maintain
+operation in the face of device mobility
+•	Ubiquitous computing is the harnessing of many small, cheap computational devices
+that are present in users' physical environments, including the home, office and even
+natural settings.
+•	The term 'ubiquitous' is intended to suggest that small computing devices will
+eventually become so pervasive in everyday objects that they are scarcely noticed. That
+is, their computational behaviour will be transparently and intimately tied up with their
+physical function.
+•	The presence of computers everywhere only becomes useful when they can
+communicate with one another. For example, it may be convenient for users to control
+their washing machine or their entertainment system from their phone or a 'universal
+remote control' device in the home. Equally, the washing machine could notify the user
+via a smart badge or phone when the washing is done.
+•	Ubiquitous and mobile computing overlap, since the mobile user can in principle
+benefit from computers that are everywhere. But they are distinct, in general.
+•	Ubiquitous computing could benefit users while they remain in a single environment
+such as the home or a hospital. Similarly, mobile computing has advantages even if it
+involves only conventional, discrete computers and devices such as laptops and
+printers.
+•	shows a user who is visiting a host organization. The figure shows the user's home
+intranet and the host intranet at the site that the user is visiting. Both intranets are
+connected to the rest of the Internet. The user has access to three forms of wireless
+connection. Their laptop has a means of connecting to the host's wireless LAN. This
+network provides coverage of a few hundred metres (a floor of a building, say). It
+connects to the rest of the host intranet via a gateway or access point. The user also has
+a mobile (cellular) telephone, which is connected to the Internet. The phone gives
+access to the Web and other Internet services, constrained only by what can be presented
+on its small display, and may also provide location information via built-in GPS
+functionality. Finally, the user carries a digital camera, which can communicate over a
+personal area wireless network (with range up to about 10m) with a device such as a
+printer.
+
