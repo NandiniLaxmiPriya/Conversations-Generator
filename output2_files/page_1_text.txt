@@ -1,0 +1,40 @@
+A distributed system is one in which components located at networked computers 
+communicate and coordinate their actions only by passing messages. 
+a distributed system as one in which hardware or software components located at networked 
+computers communicate and coordinate their actions only by passing messages. 
+Computers that are connected by a network may be spatially separated by any distance. They 
+may be on separate continents, in the same building or in the same room. 
+ 
+characteristics of distributed systems: concurrency of components, lack of a global clock 
+and independent failures of components 
+Concurrency: In a network of computers, concurrent program execution is the norm. I can do 
+my work on my computer while you do your work on yours, sharing resources such as web 
+pages or files when necessary. The capacity of the system to handle shared resources can be 
+increased by adding more resources 
+No global clock - computers in a network can synchronize their clocks – there is no single 
+global notion of the correct time. This is a direct consequence of the fact that the only 
+communication is by sending messages through a network 
+Independent failures: Each component of the system can fail independently, leaving the others 
+still running 
+Examples of distributed systems 
+Internet 
+The modern Internet is a vast interconnected collection of computer networks of many different 
+types, with the range of types increasing all the time and now including, for example, a wide 
+range of wireless communication technologies such as WiFi, WiMAX, Bluetooth and third-
+generation mobile phone networks. The net result is that networking has become a pervasive 
+resource and devices can be connected (if desired) at any time and in any place. 
+• illustrates a typical portion of the Internet. 
+• Programs running on the computers connected to it interact by passing messages, 
+• The Internet is also a very large distributed system. 
+• It enables users, wherever they are, to make use of services such as the World Wide 
+Web, email and file transfer. 
+• The set of services is open-ended – it can be extended by the addition of server 
+computers and new types of service.  
+• The figure shows a collection of intranets – subnetworks operated by companies and 
+other organizations and typically protected by firewalls. The role of a firewall is to 
+protect an intranet by preventing unauthorized messages from leaving or entering. 
+• Internet Service Providers (ISPs) are companies that provide broadband links and other 
+types of connection to individual users and small organizations, enabling them to access 
+services anywhere in the Internet as well as providing local services such as email and 
+web hosting. 
+• The intranets are linked together by backbones.  

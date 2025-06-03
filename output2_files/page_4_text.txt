@@ -1,0 +1,8 @@
+connects to the rest of the host intranet via a gateway or access point. The user also has 
+a mobile (cellular) telephone, which is connected to the Internet. The phone gives 
+access to the Web and other Internet services, constrained only by what can be presented 
+on its small display, and may also provide location information via built-in GPS 
+functionality. Finally, the user carries a digital camera, which can communicate over a 
+personal area wireless network (with range up to about 10m) with a device such as a 
+printer. 
+ 

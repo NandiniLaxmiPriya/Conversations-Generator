@@ -1,0 +1,44 @@
+ • Devices embedded in appliances such as washing machines, hi-fi systems, cars and 
+refrigerators. 
+• The portability of many of these devices, together with their ability to connect 
+conveniently to networks in different places, makes mobile computing possible. 
+•  Mobile computing is the performance of computing tasks while the user is on the move, 
+or visiting places other than their usual environment. 
+•  In mobile computing, users who are away from their ‘home’ intranet (the intranet at 
+work, or their residence) are still provided with access to resources via the devices they 
+carry with them.  
+• They can continue to access the Internet; they can continue to access resources in their 
+home intranet; and there is increasing provision for users to utilize resources such as 
+printers or even sales points that are conveniently nearby as they move around. The 
+latter is also known as location-aware or context-aware computing. 
+•  Mobility introduces a number of challenges for distributed systems, including the need 
+to deal with variable connectivity and indeed disconnection, and the need to maintain 
+operation in the face of device mobility 
+ 
+• Ubiquitous computing is the harnessing of many small, cheap computational devices 
+that are present in users’ physical environments, including the home, office and even 
+natural settings.  
+ 
+• The term ‘ubiquitous’ is intended to suggest that small computing devices will 
+eventually become so pervasive in everyday objects that they are scarcely noticed. That 
+is, their computational behaviour will be transparently and intimately tied up with their 
+physical function.  
+ 
+• The presence of computers everywhere only becomes useful when they can 
+communicate with one another. For example, it may be convenient for users to control 
+their washing machine or their entertainment system from their phone or a ‘universal 
+remote control’ device in the home. Equally, the washing machine could notify the user 
+via a smart badge or phone when the washing is done.  
+ 
+• Ubiquitous and mobile computing overlap, since the mobile user can in principle 
+benefit from computers that are everywhere. But they are distinct, in general. 
+Ubiquitous computing could benefit users while they remain in a single environment 
+such as the home or a hospital. Similarly, mobile computing has advantages even if it 
+involves only conventional, discrete computers and devices such as laptops and 
+printers. 
+ 
+• shows a user who is visiting a host organization. The figure shows the user’s home 
+intranet and the host intranet at the site that the user is visiting. Both intranets are 
+connected to the rest of the Internet. The user has access to three forms of wireless 
+connection. Their laptop has a means of connecting to the host’s wireless LAN. This 
+network provides coverage of a few hundred metres (a floor of a building, say). It 

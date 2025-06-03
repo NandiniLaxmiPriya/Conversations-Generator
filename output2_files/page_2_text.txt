@@ -1,0 +1,22 @@
+• A backbone is a network link with a high transmission capacity, employing satellite 
+connections, fibre optic cables and other high-bandwidth circuits. 
+ 
+Intranet 
+A portion of the Internet that is separately administered and has a boundary that can be 
+configured to enforce local security policies –  
+Composed of several LANs linked by backbone connections – 
+ Be connected to the Internet via a router. 
+Main issues in the design of components for the use in intranet  
+• File services  
+• Firewall  
+• The cost of software installation and support 
+ 
+Mobile and ubiquitous computing 
+Technological advances in device miniaturization and wireless networking have led 
+increasingly to the integration of small and portable computing devices into distributed 
+systems.  
+These devices include: 
+ • Laptop computers. 
+ • Handheld devices, including mobile phones, smart phones, GPS-enabled devices, pagers, 
+personal digital assistants (PDAs), video cameras and digital cameras. 
+ • Wearable devices, such as smart watches with functionality similar to a PDA. 

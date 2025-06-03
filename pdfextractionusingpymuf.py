@@ -49,6 +49,6 @@ def extract_text_from_pdf(pdf_path,output_dir):
 
 
 if __name__ == "__main__":
-    pdf_file = "Tenali.pdf"
-    output_file = "output_files"
+    pdf_file = "DS_test.pdf"
+    output_file = "output2_files"
     extract_text_from_pdf(pdf_file, output_file)

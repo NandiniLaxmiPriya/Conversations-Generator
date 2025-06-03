@@ -46,7 +46,7 @@ if __name__ == "__main__":
         similarity_score = calculate_semantic_similarity(input2_text, input1_text)
 
         if similarity_score is not None:
-            print(f"Semantic Similarity between tesseract and Gemini extracted text (using paraphrase-multilingual-MiniLM-L12-v2): {similarity_score:.4f}")
+            print(f"Semantic Similarity between text1 and text2 (using paraphrase-multilingual-MiniLM-L12-v2): {similarity_score:.4f}")
         else:
             print("Could not calculate semantic similarity.")
     else:

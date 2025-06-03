@@ -141,14 +141,16 @@ def extract_text(pdf_bytes: bytes, output_filename: str):
           ),
           prompt])
 
-    with open(output_filename, "w", encoding="utf-8") as outfile:
-        outfile.write(response.text)
+    # with open(output_filename, "w", encoding="utf-8") as outfile:
+    #     outfile.write(response.text)
     # print(response.text)
     print(detect_language(response.text))
     response_main=""
     detected_lang = detect_language(response.text)
     if(detected_lang=="en"):
         print("Language detected is english")
+        with open(output_filename, "w", encoding="utf-8") as outfile:
+            outfile.write(response.text)
         prompt2 = f"""You are an efficient and precise translator.
                       Your task is to translate the following English text into Telugu but follow these rules:
 1. Keep all technical terms in English without translating them.
@@ -167,12 +169,14 @@ def extract_text(pdf_bytes: bytes, output_filename: str):
         response_main=telugu_translated
     else:
         print("Language detected is telugu")
+        with open(output_filename, "w", encoding="utf-8") as outfile:
+            outfile.write(response.text)
         response_main=response.text
-    result_convo = conversations_generator(response_main)
+    result_convo = conversations_generator(response_main,detected_lang)
     return result_convo
 
 
-def conversations_generator(response_main):
+def conversations_generator(response_main,language):
     conv_prompt = f"""
 Generate a realistic and engaging technical conversation in Telugu among three speakers based on the content provided in "{response_main}".
 
@@ -214,8 +218,13 @@ Output Format:
         top_p=1.0,
         top_k=1
     ))
-    with open("conversations_output.txt", "w", encoding="utf-8") as outfile:
-        outfile.write(response_conversation.text)
+
+    if (language == "en"):
+        with open("conversations_output.txt", "w", encoding="utf-8") as outfile:
+            outfile.write(response_conversation.text)
+    else:
+        with open("conversations_output_tel.txt", "w", encoding="utf-8") as outfile:
+            outfile.write(response_conversation.text)
     return {"conversation": response_conversation.text}
 
 
