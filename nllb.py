@@ -221,7 +221,7 @@ def translate_text(text, src_lang_code, tgt_lang_code):
 
 
 # Read input from file
-with open("English_extracted_text_GEMINI.txt", "r", encoding="utf-8") as f:
+with open("Gemini_extracted_text_output.txt", "r", encoding="utf-8") as f:
     original_text = f.read()
 
 # Sentence tokenization

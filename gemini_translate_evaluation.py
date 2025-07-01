@@ -19,7 +19,7 @@ back_translated_english = response_backtranslate.text
 with open("back_translated.txt", "w", encoding="utf-8") as outfile:
     outfile.write(back_translated_english)
 
-with open("English_extracted_text_GEMINI.txt", "r", encoding="utf-8") as f:
+with open("Gemini_extracted_text_output.txt", "r", encoding="utf-8") as f:
     reference_text=f.read()
 reference = reference_text.strip()
 candidate = back_translated_english.strip()

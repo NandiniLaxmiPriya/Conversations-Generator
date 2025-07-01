@@ -1,49 +1,21 @@
-A distribution system is a network of computers where components communicate and coordinate their actions only by sending messages.
-A distribution system in which hardware or software components in network computers communicate and coordinate their actions only by sending messages.
-Computers connected by a network can be spatially isolated at any distance.
-They can be in different continents, in the same building or in the same room.
-Features of distributed systems: concurrency of components, lack of global clock and independent failure of components concurrency: In a computer network, concurrent program execution is the norm.
-I can do my work on my computer, share resources like web pages or files when you need them.
-The system's capacity to manage shared resources can be increased by adding more resources - there is no global clock - and there is no single global concept of the exact time when computers on a network can synchronize their clocks.
-It is a direct consequence of communication only by sending messages over a network. Each part of the system fails independently, while the rest still runs.
-As a result, networking has become a widespread resource and devices can be connected anytime and anywhere (if needed).
-• A simple part of the Internet is described.
-• Programs running on connected computers interact by transmitting messages.
-• It enables users to use services such as the World Wide Web, email, file transfer, etc. from anywhere.
-• The set of services will be open-end. • It can be expanded by adding server computers and new types of services.
-• This number is a collection of intranet subnetworks operated by companies and other entities and generally protected by firewalls.
-The role of a firewall is to protect an intranet by preventing unauthorized messages from leaving or entering.
-• Internet Service Providers (ISPs) are organizations that provide broadband links and other types of connections to individual users and small businesses, enabling them to access services anywhere on the Internet, as well as providing local services such as email and web hosting.
-• The intranets are connected by the spine.
-• A spine is a high-transmission capacity network link that uses satellite connections, optical fiber cables and other high-bandwidth circuits.
-The Internet is a separately managed component of the Internet and consists of a border that can be configured to implement local security policies. It consists of multiple LANs connected via spinal connections.
-The main problems in the design of components for use in the Internet • File Services • Firewall • Software installation and support costs The shrinking of mobile and most common computing devices and technological advances in wireless networking have led to the integration of small and portable computing devices into widely distributed systems.
-These devices include: • Laptops.
-• Handheld devices such as mobile phones, smartphones, GPS-enabled devices, payers, personal digital assistants (PDAs), video cameras and digital cameras.
-• Wearable devices such as smartwatches with similar performance to PDA.
-• Equipment fitted in washing machines, high-fi systems, cars, refrigerators and other appliances.
-• The portability of many of these devices, the ability to connect to networks in different locations, and mobile computing.
-• Mobile computing is the performance of computing tasks when a user is travelling or visiting places other than their normal environment.
-• In mobile computing, users who are far from their 'home' intranet (intranet at work or home) still have access to resources through the devices they carry.
-• They can maintain the Internet; they can maintain resources on their home intranet; and there is a growing trend for consumers to use resources such as printers or supply centers when they move.
-The latter is also known as position-assessment or context-assessment computing.
-• Mobility presents a number of challenges to distribution systems, including the need to deal with variable connectivity and disconnectivity, and the need to continue operation to cope with the mobility of devices.
-• The term "ubiquitous" indicates that small computer devices are so widespread in everyday objects that they are rarely noticed.
-That is, their computational behavior is transparent and closely linked to their physical functioning.
-• Computers can communicate with each other whenever they are anywhere.
-For example, users may be convenient to control their washing machine or entertainment system from their phone or 'universal remote control' device in their home.
-Similarly, a washing machine can notify the user when the washing is completed by means of a smart badge or phone.
-• As mobile users can benefit from computers anywhere, existing computers and mobile computing are interconnected.
-But they are usually different.
-• Existing computers benefit users in the same environment as home or hospital.
-Similarly, mobile computing has advantages despite having only traditional, discrete computers and devices such as laptops and printers.
-• Displays the visitor at the host company.
-This number includes home intranet and host intranet on the site the user visits.
-Both of these internet networks are connected to the rest of the internet.
-The user has access to three types of wireless connections.
-There is a tool to connect their laptop host's wireless LAN.
-The network provides coverage of a few hundred meters (the floor of a building, for example).
-• It connects to the rest of the host intranet via gateway or access point.
-The user also has a mobile phone connected to the internet.
-The phone provides access to the web and other Internet services, limited only by what can be displayed on its small display, and can also provide location information through built-in GPS functionality.
-Finally, the user has a digital camera that can communicate via a personal area wireless network (with a range of up to about 10 meters) via a device such as a printer.
+Photosynthesis is the physicochemical process by which green plants, algae, and some bacteria synthesize organic compounds using components such as carbon dioxide and water in the presence of sunlight.
+In this process, light energy is converted into chemical energy in the form of sugar and oxygen.
+The process of converting light energy into chemical energy.
+During photosynthesis in green plants, light energy is captured and used to convert water, carbon dioxide, and minerals into oxygen and energy-rich organic compounds.
+It is impossible to overestimate the importance of photosynthesis in maintaining life on Earth.
+If photosynthesis is stopped, soon there will be little food or other organic matter on Earth.
+Many organisms disappear, and over time the Earth's atmosphere becomes almost gaseous without oxygen.
+The only organisms that exist under such conditions are chemosynthetic bacteria, which can use the chemical energy of certain inorganic compounds and therefore do not depend on the conversion of light energy.
+The energy produced by photosynthesis of plants millions of years ago is responsible for the fossil fuels (i.e. coal, oil and gas) that power industrial society.
+In past ages, the green plants and small creatures that feed on plants have grown faster than they consume them, and their remains have been stored in the Earth's crust by relaxation and other geological processes.
+These organic residues, protected from oxidation, were gradually converted into fossil fuels.
+These fuels are not only a major source of energy consumed in factories, homes and transport sectors but also serve as raw materials for plastics and other synthetic products.
+Unfortunately, modern civilization is consuming an extra photosynthetic product that has been collected over millions of years in a few centuries.
+As a result, carbon dioxide removed from the air is recovered very quickly to make carbon hydrates in light synthesis for millions of years.
+The concentration of carbon dioxide in the Earth's atmosphere is increasing at an unprecedented rate in Earth's history, and the phenomenon is expected to have major impacts on Earth's atmosphere.
+In a world of rapidly growing human population, the demand for food, materials and energy has created a need to increase the amount of photosynthesis and the capacity to convert photosynthetic production into useful products for people.
+In response to those needs - the so-called Green Revolution, which began in the mid-20th century - vast improvements in agricultural yields were achieved through the control of chemical fertilizers, pesticides and plant diseases, plant breeding, and the use of machine farming, crop and crop processing.
+This effort has limited severe hunger in some parts of the world despite rapid population growth, but has not eliminated widespread undernutrition.
+Moreover, the rate of decline in the growth of the yield of the major crops has started since the early 1990s.
+This is especially true in rice in Asia.
+The continuous development of new plant varieties and the ever-increasing cost of fertilisers, pesticides and the constant development of new plant varieties has become a problem for farmers in many countries due to the continuous increase in agricultural production.

@@ -25,6 +25,7 @@ def read_root():
 
 prompt = """ You are an efficient and precise text-based PDF extractor.
 You will receive the PDF, which may contain English or Telugu text. \n
+You shouldnot extract the text from the image present in the PDF\n
 Your task is to extract the complete textual content exactly as it appears in the PDF but You should not extract text from images, tables and figures. Preserving the original language of each segment.\n
 You should extract the bullets and also extract the content for each bullet correctly. \n
 Strictly ignore page numbers, headers, footers, borders and any other elements that are not the main textual content of the document.\n

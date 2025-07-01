@@ -26,15 +26,16 @@ def read_text_from_file(filepath):
 
 if __name__ == "__main__":
     # Specify the file paths for the text extracted by PyMuPDF and Gemini API
-    pdfType = input("Enter 1.Telugu Text PDF 2.English Text PDF") 
-    if pdfType=="1":
-        print("1. Telugu")
-        input1_text_file = "English_extracted_text_GEMINI.txt"
-        input2_text_file="Output.txt"
-    else:
-        print("2. english")
-        input1_text_file = 'translate_output.txt'
-        input2_text_file = 'conversations_output.txt'
+    # pdfType = input("Enter 1.Telugu Text PDF 2.English Text PDF") 
+    # if pdfType=="1":
+    #     print("1. Telugu")
+    #     input1_text_file = "English_extracted_text_GEMINI.txt"
+    #     input2_text_file="Output.txt"
+    # else:
+        # print("2. english")
+    input1_text_file = 'translate_output.txt'
+    input2_text_file = 'conversations_output.txt'
+    
         
 
     # Read the extracted text from the files
