@@ -60,7 +60,7 @@ def pdfinputType():
             extract_text_from_pdf(input_file, output_file,pdfType)
     else:
         print("2. English")
-        input_file = "DS_test.pdf"
+        input_file = "Photosynth_input.pdf"
         output_file = "English_extracted_text_tesseract.txt"
         if not os.path.exists(input_file):
             print(f"PDF file '{input_file}' not found.")

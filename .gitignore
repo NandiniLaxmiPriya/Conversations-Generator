@@ -1,2 +1,7 @@
 .env
 venv
+# Ignore only the DocLayNet subset folder(s)
+dataset_analysis/DocLayNet-10k/
+
+# If the dataset might appear elsewhere too, use a glob:
+**/DocLayNet-10k/

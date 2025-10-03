@@ -1,0 +1,65 @@
+{
+  "n_rows": 10000,
+  "fields": [
+    "image",
+    "bboxes",
+    "category_id",
+    "segmentation",
+    "area",
+    "pdf_cells",
+    "metadata"
+  ],
+  "n_unique_category_ids": 10,
+  "top_categories": [
+    [
+      10,
+      63863
+    ],
+    [
+      8,
+      22670
+    ],
+    [
+      5,
+      8219
+    ],
+    [
+      4,
+      7631
+    ],
+    [
+      9,
+      7539
+    ],
+    [
+      6,
+      6045
+    ],
+    [
+      7,
+      5817
+    ],
+    [
+      1,
+      2126
+    ],
+    [
+      2,
+      234
+    ],
+    [
+      11,
+      231
+    ]
+  ],
+  "image_width_mean": 1025.0,
+  "image_height_mean": 1025.0,
+  "bbox_count_mean": 12.4375,
+  "bbox_count_median": 11.0,
+  "bbox_area_frac_mean_of_means": 0.06490837973278737,
+  "bbox_aspect_ratio_mean_of_means": 11.945930936502345,
+  "pdf_cells_count_mean": 100.8357,
+  "pdf_cell_chars_mean_of_means": 34.94682218543082,
+  "pdf_cell_words_mean_of_means": 5.483350672451133,
+  "segmentation_presence_pct": 99.71
+}

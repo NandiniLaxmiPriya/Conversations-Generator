@@ -2,12 +2,10 @@ Photosynthesis is the physicochemical process by which green plants, algae, and 
 bacteria synthesise organic compounds in the presence of sunlight using components such
 as carbon dioxide and water. In this process, light energy is converted to chemical energy in
 the form of sugars and Oxygen as a byproduct.
-
 photosynthesis, the process by which green plants and certain other organisms transform
 light energy into chemical energy. During photosynthesis in green plants, light energy is
 captured and used to convert water, carbon dioxide, and minerals into oxygen and energy-
 rich organic compounds.
-
 It would be impossible to overestimate the importance of photosynthesis in the
 maintenance of life on Earth. If photosynthesis ceased, there would soon be little food or
 other organic matter on Earth. Most organisms would disappear, and in time Earth's
@@ -15,7 +13,6 @@ atmosphere would become nearly devoid of gaseous oxygen. The only organisms able
 exist under such conditions would be the chemosynthetic bacteria, which can utilize the
 chemical energy of certain inorganic compounds and thus are not dependent on the
 conversion of light energy.
-
 Energy produced by photosynthesis carried out by plants millions of years ago is responsible
 for the fossil fuels (i.e., coal, oil, and gas) that power industrial society. In past ages, green
 plants and small organisms that fed on plants increased faster than they were consumed,
@@ -29,7 +26,6 @@ been removed from the air to make carbohydrates in photosynthesis over millions 
 being returned at an incredibly rapid rate. The carbon dioxide concentration in Earth's
 atmosphere is rising the fastest it ever has in Earth's history, and this phenomenon is
 expected to have major implications on Earth's climate.
-
 Requirements for food, materials, and energy in a world where human population is rapidly
 growing have created a need to increase both the amount of photosynthesis and the
 efficiency of converting photosynthetic output into products useful to people. One response
@@ -43,3 +39,4 @@ especially true for rice in Asia. Rising costs associated with sustaining high r
 agricultural production, which required ever-increasing inputs of fertilizers and pesticides
 and constant development of new plant varieties, also became problematic for farmers in
 many countries.
+
